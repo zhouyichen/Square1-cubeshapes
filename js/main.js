@@ -6,6 +6,16 @@ var cases = [
         shape : ['ceceecce', 'ceececec'],
         name: "Similar_Fist_A",
         step : '/ -3, 0 /'
+    {
+        shape : ['ecceecce', 'ceecceec'],
+        name: "Barrel_Barrel_A",
+        step : '/ -3, -3 /'
+    },
+    {
+        shape : ['ceecceec', 'ecceecce'],
+        name: "Barrel_Barrel_B",
+        step : '/ 3, 3 /'
+    },
     }
 ]
 var casesHtml = '';
