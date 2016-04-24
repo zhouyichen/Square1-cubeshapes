@@ -6,6 +6,12 @@ var cases = [
         shape : ['ceceecce', 'ceececec'],
         name: "Similar_Fist_A",
         step : '/ -3, 0 /'
+    },
+    {
+        shape : ['ececceec', 'eccecece'],
+        name: "Similar_Fist_B",
+        step : '/ -3, 0 /'
+    },
     {
         shape : ['ecceecce', 'ceecceec'],
         name: "Barrel_Barrel_A",
@@ -16,6 +22,15 @@ var cases = [
         name: "Barrel_Barrel_B",
         step : '/ 3, 3 /'
     },
+    {
+        shape : ['ceecccee', 'cceeceec'],
+        name: "Shield_Shield_A",
+        step : '/ 1, 0' + otherCase('Barrel_Barrel_A')
+    },
+    {
+        shape : ['cceeceec', 'ceecccee'],
+        name: "Shield_Shield_B",
+        step : '/ 0, 1' + otherCase('Barrel_Barrel_B')
     }
 ]
 var casesHtml = '';
