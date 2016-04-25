@@ -31,6 +31,21 @@ var cases = [
         shape : ['cceeceec', 'ceecccee'],
         name: "Shield_Shield_B",
         step : '/ 0, 1' + otherCase('Barrel_Barrel_B')
+    },
+    {
+        shape : ['eeccccee', 'cceeeecc'],
+        name: "Scallop_Scallop",
+        step : '/ 1, 2' + otherCase('Barrel_Barrel_A')
+    },
+    {
+        shape : ['eeccccee', 'ceecceec'],
+        name: "Scallop_Barrel",
+        step : '/ 0, -4' + otherCase('Shield_Shield_A')
+    },
+    {
+        shape : ['eeeecccc', 'ceeceecc'],
+        name: "Scallop_Shield",
+        step : '/ 0, -2 / 4, 0' + otherCase('Shield_Shield_B')
     }
 ]
 var casesHtml = '';
