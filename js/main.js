@@ -46,6 +46,16 @@ var cases = [
         shape : ['eeeecccc', 'ceeceecc'],
         name: "Scallop_Shield",
         step : '/ 0, -2 / 4, 0' + otherCase('Shield_Shield_B')
+    },
+    {
+        shape : ['cceeeecc', 'ececcece'],
+        name: "Scallop_Kite_A",
+        step : '/ -1, -2' + otherCase('Similar_Fist_A')
+    },
+    {
+        shape : ['eeccccee', 'ceceecec'],
+        name: "Scallop_Kite_B",
+        step : '/ -2, -1' + otherCase('Similar_Fist_B')
     }
 ]
 var casesHtml = '';
