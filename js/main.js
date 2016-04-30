@@ -4,94 +4,111 @@ var canvasSize = 100;
 var cases = [
     {
         shape : ['ceceecce', 'ceececec'],
-        name: "Similar_Fist_A",
+        name : "Similar_Fist_A",
         step : '/ -3, 0 /'
     },
     {
         shape : ['ececceec', 'eccecece'],
-        name: "Similar_Fist_B",
+        name : "Similar_Fist_B",
         step : '/ -3, 0 /'
     },
     {
         shape : ['ecceecce', 'ceecceec'],
-        name: "Barrel_Barrel_A",
+        name : "Barrel_Barrel_A",
         step : '/ -3, -3 /'
     },
     {
         shape : ['ceecceec', 'ecceecce'],
-        name: "Barrel_Barrel_B",
+        name : "Barrel_Barrel_B",
         step : '/ 3, 3 /'
     },
     {
         shape : ['ceecccee', 'cceeceec'],
-        name: "Shield_Shield_A",
-        step : '/ 1, 0' + otherCase('Barrel_Barrel_A')
+        name : "Shield_Shield_A",
+        step : '/ 1, 0',
+        next : 'Barrel_Barrel_A'
     },
     {
         shape : ['cceeceec', 'ceecccee'],
-        name: "Shield_Shield_B",
-        step : '/ 0, 1' + otherCase('Barrel_Barrel_B')
+        name : "Shield_Shield_B",
+        step : '/ 0, 1',
+        next : 'Barrel_Barrel_B'
     },
     {
         shape : ['eeccccee', 'cceeeecc'],
-        name: "Scallop_Scallop",
-        step : '/ 1, 2' + otherCase('Barrel_Barrel_A')
+        name : "Scallop_Scallop",
+        step : '/ 1, 2',
+        next : 'Barrel_Barrel_A'
     },
     {
         shape : ['eeccccee', 'ceecceec'],
-        name: "Scallop_Barrel",
-        step : '/ 0, -4' + otherCase('Shield_Shield_A')
+        name : "Scallop_Barrel",
+        step : '/ 0, -4',
+        next : 'Shield_Shield_A'
     },
     {
         shape : ['eeeecccc', 'ceeceecc'],
-        name: "Scallop_Shield",
-        step : '/ 0, -2 / 4, 0' + otherCase('Shield_Shield_B')
+        name : "Scallop_Shield",
+        step : '/ 0, -2 / 4, 0',
+        next : 'Shield_Shield_B'
     },
     {
         shape : ['cceeeecc', 'ececcece'],
-        name: "Scallop_Kite_A",
-        step : '/ -1, -2' + otherCase('Similar_Fist_A')
+        name : "Scallop_Kite_A",
+        step : '/ -1, -2',
+        next : 'Similar_Fist_A'
     },
     {
         shape : ['eeccccee', 'ceceecec'],
-        name: "Scallop_Kite_B",
-        step : '/ -2, -1' + otherCase('Similar_Fist_B')
+        name : "Scallop_Kite_B",
+        step : '/ -2, -1',
+        next : 'Similar_Fist_B'
     },
 	{
 		shape : ['ccceeeec', 'cececeec'],
-        name: "Scallop_Fist_A",
-		step : '/ 3, 0 / -4, 3' + otherCase('Scallop_Kite_A')
+        name : "Scallop_Fist_A",
+		step : '/ 3, 0 / -4, 3',
+        next : 'Scallop_Kite_A'
 	},
     {
         shape : ['cccceeee', 'ececceec'],
-        name: "Scallop_Fist_B",
-        step : '/ -3, 0 / -2, 3' + otherCase('Scallop_Kite_A')
+        name : "Scallop_Fist_B",
+        step : '/ -3, 0 / -2, 3',
+        next : 'Scallop_Kite_A'
     },
     {
         shape : ['ccceeeec', 'ceceeecc'],
-        name: "Scallop_Pawn_A",
-        step : '/ 3, 2 / -4, 3' + otherCase('Scallop_Kite_A')
+        name : "Scallop_Pawn_A",
+        step : '/ 3, 2 / -4, 3',
+        next : 'Scallop_Kite_A'
     },
     {
         shape : ['cccceeee', 'ececccee'],
-        name: "Scallop_Pawn_B",
-        step : '/ -3, -2 / -2, 3' + otherCase('Scallop_Kite_A')
+        name : "Scallop_Pawn_B",
+        step : '/ -3, -2 / -2, 3',
+        next : 'Scallop_Kite_A'
     },
     {
         shape : ['ccceeeec', 'ecececec'],
-        name: "Scallop_Square",
-        step : '/ 0, 2 / -2, 0' + otherCase('Scallop_Kite_A')
+        name : "Scallop_Square",
+        step : '/ 0, 2 / -2, 0',
+        next : 'Scallop_Kite_A'
     },
     {
         shape : ['ccceeeec', 'ecceccee'],
-        name: "Scallop_Muffin",
-        step : '/ 0, -2 / -2, 3' + otherCase('Scallop_Kite_A')
+        name : "Scallop_Muffin",
+        step : '/ 0, -2 / -2, 3',
+        next : 'Scallop_Kite_A'
     }
 ]
 var casesHtml = '';
 cases.forEach(function(c) {
 	var canvas = htmlText('td', canvasCell(canvasSize, c.name));
-    var row = canvas + htmlText('td', c.name + '<br>' + c.step);
+    var steps = c.step;
+    if (c.next) {
+        steps += renderNext(c.next);
+    }
+    var row = canvas + htmlText('td', c.name + '<br>' + steps);
 	casesHtml += htmlText('tr', row, 'case' + c.name);
 });
 $('#cases').html(casesHtml);
@@ -102,7 +119,7 @@ cases.forEach(function(c) {
 	sq1Img.drawDoubleShape(c.shape[0], c.shape[1]);
 });
 
-function otherCase(id) {
+function renderNext(id) {
     return ' <button><a href="#case' + id + '">' + id + '</a></button>';
 }
 
