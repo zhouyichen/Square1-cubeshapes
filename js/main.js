@@ -35,6 +35,24 @@ var cases = [
         next : 'Barrel_Barrel_B'
     },
     {
+        shape : ['ecceceeee', 'cccceec'],
+        name : "15_2_A",
+        step : '/ -4, 3',
+        next : 'Scallop_Kite_A'
+    },
+    {
+        shape : ['ecceeeeec', 'cccceec'],
+        name : "15_2_B",
+        step : '/ -2, 3',
+        next : 'Scallop_Kite_A'
+    },
+    {
+        shape : ['ececeeeec', 'ccccece'],
+        name : "114_101",
+        step : '/ -2, 0',
+        next : 'Scallop_Kite_A'
+    },
+    {
         shape : ['eeccccee', 'cceeeecc'],
         name : "Scallop_Scallop",
         step : '/ 1, 2',
