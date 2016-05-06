@@ -35,6 +35,24 @@ var cases = [
         next : 'Barrel_Barrel_B'
     },
     {
+        shape : ['eeccccee', 'cceeeecc'],
+        name : "Scallop_Scallop_A",
+        step : '/ 1, 2 ',
+        next : 'Barrel_Barrel_A'
+    },
+    {
+        shape : ['cceeeecc', 'ececcece'],
+        name : "Scallop_Kite_A",
+        step : '/ -1, -2 ',
+        next : 'Similar_Fist_A'
+    },
+    {
+        shape : ['eeccccee', 'ceceecec'],
+        name : "Scallop_Kite_B",
+        step : '/ -2, -1',
+        next : 'Similar_Fist_B'
+    },
+    {
         shape : ['ecceceeee', 'cccceec'],
         name : "15_2_A",
         step : '/ -4, 3',
@@ -53,12 +71,6 @@ var cases = [
         next : 'Scallop_Kite_A'
     },
     {
-        shape : ['eeccccee', 'cceeeecc'],
-        name : "Scallop_Scallop",
-        step : '/ 1, 2',
-        next : 'Barrel_Barrel_A'
-    },
-    {
         shape : ['eeccccee', 'ceecceec'],
         name : "Scallop_Barrel",
         step : '/ 0, -4',
@@ -71,18 +83,6 @@ var cases = [
         next : 'Shield_Shield_B'
     },
     {
-        shape : ['cceeeecc', 'ececcece'],
-        name : "Scallop_Kite_A",
-        step : '/ -1, -2',
-        next : 'Similar_Fist_A'
-    },
-    {
-        shape : ['eeccccee', 'ceceecec'],
-        name : "Scallop_Kite_B",
-        step : '/ -2, -1',
-        next : 'Similar_Fist_B'
-    },
-	{
 		shape : ['ccceeeec', 'cececeec'],
         name : "Scallop_Fist_A",
 		step : '/ 3, 0 / -4, 3',
