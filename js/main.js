@@ -25,13 +25,13 @@ var cases = [
     {
         shape : ['ceecccee', 'cceeceec'],
         name : "Shield_Shield_A",
-        step : '/ 1, 0',
+        step : '/ 1, 0 ',
         next : 'Barrel_Barrel_A'
     },
     {
         shape : ['cceeceec', 'ceecccee'],
         name : "Shield_Shield_B",
-        step : '/ 0, 1',
+        step : '/ 0, 1 ',
         next : 'Barrel_Barrel_B'
     },
     {
