@@ -35,6 +35,18 @@ var cases = [
         next : 'Barrel_Barrel_B'
     },
     {
+        shape : ['cceeecce', 'ecceccee'],
+        name : "Muffin_Muffin_A",
+        step : '/ 0, -2 ',
+        next : 'Barrel_Barrel_A'
+    },
+    {
+        shape : ['ecceccee', 'cceeecce'],
+        name : "Muffin_Muffin_B",
+        step : '/ -2, 0 ',
+        next : 'Barrel_Barrel_B'
+    },
+    {
         shape : ['eeccccee', 'cceeeecc'],
         name : "Scallop_Scallop_A",
         step : '/ 1, 2 ',
