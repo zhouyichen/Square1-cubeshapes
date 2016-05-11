@@ -65,6 +65,12 @@ var cases = [
         next : 'Similar_Fist_A'
     },
     {
+        shape : ['ecceeecc', 'ecececec'],
+        name : "Muffin_Square_A",
+        step : '/ -1, -3 ',
+        next : 'Similar_Fist_A'
+    },
+    {
         shape : ['cceeeecc', 'ececcece'],
         name : "Scallop_Kite_A",
         step : '/ -1, -2 ',
