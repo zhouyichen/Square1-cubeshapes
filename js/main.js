@@ -83,6 +83,18 @@ var cases = [
         next : 'Similar_Fist_B'
     },
     {
+        shape : ['ceeceecc', 'ecececec'],
+        name : "Shield_Square_A",
+        step : '/ -1, 0 ',
+        next : 'Similar_Fist_A'
+    },
+    {
+        shape : ['eeccceec', 'ecececec'],
+        name : "Shield_Square_B",
+        step : '/ 0, -1 ',
+        next : 'Similar_Fist_B'
+    },
+    {
         shape : ['cceeeecc', 'ececcece'],
         name : "Scallop_Kite_A",
         step : '/ -1, -2 ',
