@@ -101,6 +101,12 @@ var cases = [
         next : 'Shield_Square_A'
     },
     {
+        shape : ['eeceeccc', 'ececcece'],
+        name : "Shield_Kite_B",
+        step : '/ 2, 0 / -4, 1 ',
+        next : 'Shield_Square_B'
+    },
+    {
         shape : ['cececcee', 'ceececec'],
         name : "Opposite_Fist_A",
         step : '/ 2, 0 ',
