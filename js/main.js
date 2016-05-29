@@ -18,6 +18,11 @@ var cases = [
         step : '/ 3, 0 /'
     },
     {
+        shape : ['cececeec', 'ecceecec'],
+        name : "Similar_Fist_D",
+        step : '/ 3, 0 /'
+    },
+    {
         shape : ['ecceecce', 'ceecceec'],
         name : "Barrel_Barrel_A",
         step : '/ -3, -3 /'
